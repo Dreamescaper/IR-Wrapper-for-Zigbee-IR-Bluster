@@ -1,5 +1,12 @@
 send_code:
   fields:
+    backend:
+      required: false
+      selector:
+        select:
+          options:
+            - z2m
+            - zha
     friendly_name:
       required: false
       selector:
@@ -21,4 +28,32 @@ send_code:
         number:
           min: 1
           max: 10
+          mode: box
+    zha_ieee:
+      required: false
+      selector:
+        text:
+    zha_endpoint_id:
+      required: false
+      default: 1
+      selector:
+        number:
+          min: 1
+          max: 255
+          mode: box
+    zha_cluster_id:
+      required: false
+      default: 57348
+      selector:
+        number:
+          min: 1
+          max: 65535
+          mode: box
+    zha_command:
+      required: false
+      default: 2
+      selector:
+        number:
+          min: 0
+          max: 255
           mode: box
