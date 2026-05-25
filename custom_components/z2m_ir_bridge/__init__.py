@@ -32,7 +32,7 @@ from .const import (
     SIGNAL_NEW_IR_DEVICE,
 )
 from .device_registry import is_ir_device, normalize_device
-from .mqtt import build_payload, build_topic
+from .mqtt_helpers import build_payload, build_topic
 
 _LOGGER = logging.getLogger(__name__)
 

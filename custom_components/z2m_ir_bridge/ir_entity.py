@@ -9,7 +9,7 @@ from homeassistant.components.mqtt import DOMAIN as MQTT_DOMAIN
 from homeassistant.core import HomeAssistant
 
 from .const import DEFAULT_BASE_TOPIC, DOMAIN
-from .mqtt import build_payload, build_topic
+from .mqtt_helpers import build_payload, build_topic
 
 
 class Z2MInfraredEntity(InfraredEntity):
