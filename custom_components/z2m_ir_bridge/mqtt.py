@@ -10,12 +10,12 @@ from .const import DEFAULT_BASE_TOPIC
 
 def build_topic(
     friendly_name: str,
-    command: str = "ir_code_to_send",
+    command: str | None = None,
     base_topic: str = DEFAULT_BASE_TOPIC,
 ) -> str:
-    """Build the Zigbee2MQTT set topic for an exposed command."""
+    """Build the Zigbee2MQTT set topic for device commands."""
 
-    return f"{base_topic}/{friendly_name}/set/{command}"
+    return f"{base_topic}/{friendly_name}/set"
 
 
 def build_payload(code: Any) -> str:

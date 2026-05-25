@@ -59,8 +59,7 @@ class Z2MInfraredEntity(InfraredEntity):
         repeat = int(kwargs.get("repeat", 1))
         topic = build_topic(
             self._friendly_name,
-            "ir_code_to_send",
-            self._base_topic,
+            base_topic=self._base_topic,
         )
         payload = build_payload(command)
 
