@@ -28,7 +28,8 @@ class Z2MIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     def async_get_options_flow(config_entry):
         """Create the options flow."""
 
-        return Z2MIROptionsFlow(config_entry)
+        # HA 2024.11+: OptionsFlow no longer receives config_entry in __init__
+        return Z2MIROptionsFlow()
 
     async def async_step_user(self, user_input=None):
         """Create the integration entry."""
@@ -68,10 +69,7 @@ class Z2MIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 class Z2MIROptionsFlow(config_entries.OptionsFlow):
     """Handle options for Z2M IR Bridge."""
 
-    def __init__(self, config_entry):
-        """Initialize the options flow."""
-
-        self._config_entry = config_entry
+    # No __init__ needed - config_entry is available via self.config_entry in HA 2024.11+
 
     async def async_step_init(self, user_input=None):
         """Update integration options."""
@@ -79,7 +77,7 @@ class Z2MIROptionsFlow(config_entries.OptionsFlow):
         if user_input is not None:
             return self.async_create_entry(title="", data=user_input)
 
-        data = {**self._config_entry.data, **self._config_entry.options}
+        data = {**self.config_entry.data, **self.config_entry.options}
         return self.async_show_form(
             step_id="init",
             data_schema=vol.Schema(
