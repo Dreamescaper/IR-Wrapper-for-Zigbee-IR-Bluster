@@ -1,4 +1,4 @@
-# Z2M IR Bridge
+# Zigbee IR Bridge
 
 Home Assistant custom integration that exposes Zigbee2MQTT and ZHA IR emitters, such as ZS06, UFO-R11, and similar Zigbee IR blasters, as Home Assistant infrared entities.
 
@@ -17,9 +17,9 @@ Home Assistant custom integration that exposes Zigbee2MQTT and ZHA IR emitters, 
    ```
 
 4. Select **Integration** as the category.
-5. Download **Z2M IR Bridge**.
+5. Download **Zigbee IR Bridge**.
 6. Restart Home Assistant.
-7. Go to **Settings** -> **Devices & services** -> **Add integration** and search for **Z2M IR Bridge**.
+7. Go to **Settings** -> **Devices & services** -> **Add integration** and search for **Zigbee IR Bridge**.
 
 ## Zigbee2MQTT
 
