@@ -2,6 +2,10 @@
 
 Home Assistant custom integration that exposes Zigbee2MQTT and ZHA IR emitters, such as ZS06, UFO-R11, and similar Zigbee IR blasters, as Home Assistant infrared entities.
 
+## Requirements
+
+- Home Assistant 2026.4.0 or newer.
+
 ## Installation with HACS
 
 1. In Home Assistant, open HACS.
