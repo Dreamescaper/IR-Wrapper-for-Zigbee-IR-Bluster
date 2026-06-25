@@ -5,6 +5,7 @@ from __future__ import annotations
 import voluptuous as vol
 
 from homeassistant import config_entries
+from homeassistant.helpers.selector import TextSelector, TextSelectorConfig
 
 from .const import (
     CONF_BASE_TOPIC,
@@ -60,7 +61,7 @@ class Z2MIRConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     vol.Optional(
                         CONF_ZHA_DEVICES,
                         default="",
-                    ): str,
+                    ): TextSelector(TextSelectorConfig(multiline=True)),
                 }
             ),
         )
@@ -108,7 +109,7 @@ class Z2MIROptionsFlow(config_entries.OptionsFlow):
                     vol.Optional(
                         CONF_ZHA_DEVICES,
                         default=data.get(CONF_ZHA_DEVICES, ""),
-                    ): str,
+                    ): TextSelector(TextSelectorConfig(multiline=True)),
                 }
             ),
         )
